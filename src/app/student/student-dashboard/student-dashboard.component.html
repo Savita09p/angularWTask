@@ -1,0 +1,26 @@
+<!-- <p>student-dashboard works!</p> -->
+ <div class="row">
+    <div class="col-12 m-5 ">
+        <div class="example-button-container ">
+         <h3 class="text-center">
+            Add Student  
+            <button
+            (click)="onAddStudent()"
+             mat-fab color="accent"
+              aria-label="Add post">
+                <mat-icon>add</mat-icon>
+              </button>
+         </h3>
+          </div>
+    </div>
+
+   <div class="col-md-6 offset-3 d-flex flex-column-reverse">
+      <!-- <app-post-card [post]="post"
+      *ngFor="let post of postArr"
+      ></app-post-card> -->
+       <app-student-table [student]="student">
+   
+      </app-student-table> 
+     <!-- <app-student-table></app-student-table> -->
+   </div> 
+</div>

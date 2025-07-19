@@ -1,0 +1,61 @@
+<!-- <p>auth works!</p> -->
+ <main class="auth-main">
+  <mat-card class="auth-card">
+    <mat-card-header>
+      <mat-card-title>{{ IsalredyLogin ? 'Log In' : 'Sign Up' }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      
+      <!-- Sign Up Form -->
+      <ng-container *ngIf="!IsalredyLogin">
+        <form [formGroup]="SignUpFrom" (ngSubmit)="OnSignUp()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>User Role</mat-label>
+            <mat-select formControlName="userRole">
+              <mat-option value="buyer">Buyer</mat-option>
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="supreadmin">Super Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" class="full-width">Sign Up</button>
+        </form>
+      </ng-container>
+
+      <!-- Log In Form -->
+      <ng-container *ngIf="IsalredyLogin">
+        <form [formGroup]="LogInFrom" (ngSubmit)="onLogIn()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" />
+          </mat-form-field>
+
+          <button mat-raised-button color="accent" class="full-width">Log In</button>
+        </form>
+      </ng-container>
+
+      <div class="text-center mt-3">
+        <a href="javascript:;" (click)="IsalredyLogin = !IsalredyLogin">
+          {{ IsalredyLogin ? "I don't have an account" : "I already have an account" }}
+        </a>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</main>
+
+

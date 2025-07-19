@@ -1,0 +1,27 @@
+<!-- <p>student-form works!</p> -->
+
+<form [formGroup]="studentForm" (ngSubmit)="onAddStudent()">
+    <h2>Add Post</h2>
+    <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" formControlName="fname" id="fname" class="form-control"> 
+    </div>
+
+    <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" formControlName="lname" id="lname" class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" id="email" class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact</label>
+        <input type="text" formControlName="contact" id="contact" class="form-control"> 
+    </div>
+    
+    <button type="submit"  mat-raised-button color="primary">{{!Isineditmode ? 'Add Post':'upadate post'}} </button>
+    <button (click)="onClose()" type="button" mat-raised-button color="warn">
+              Cancel
+    </button>
+</form>

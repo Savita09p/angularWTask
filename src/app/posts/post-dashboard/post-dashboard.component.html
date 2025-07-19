@@ -1,0 +1,57 @@
+<!-- <p>post-dashboard works!</p> -->
+
+<!-- <mat-sidenav-container fullscreen>
+    <mat-sidenav   mat-list-item #sidebar>
+     
+        <a mat-list-item>
+            posts
+        </a>
+    </mat-sidenav>
+    <mat-toolbar color="primary" class="d-flex justify-content-between">
+       <div>
+        <button mat-mini-fab color="primary" (click)="sidebar.open()" aria-label="Example icon button with a menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <a> 
+            <button mat-raised-button color="primary">posts</button>
+             posts
+          </a>
+       </div>
+
+       <div>
+        <button mat-raised-button color="warn">posts</button>
+       </div>
+
+    </mat-toolbar>
+            <div class="row">
+                <div class="col-md-8 offset-2">
+                    <router-outlet>
+                    </router-outlet>
+                </div>
+        </div>
+       
+   
+</mat-sidenav-container> -->
+
+<div class="row">
+    <div class="col-12 m-5 ">
+        <div class="example-button-container ">
+         <h3 class="text-center">
+            Add post  
+            <button
+            (click)="onAddPost()"
+             mat-fab color="accent"
+              aria-label="Add post">
+                <mat-icon>add</mat-icon>
+              </button>
+         </h3>
+          </div>
+    </div>
+
+   <div class="col-md-6 offset-3 d-flex flex-column-reverse">
+    
+    <app-post-card [post]="post"
+      *ngFor="let post of postArr"
+      ></app-post-card>
+   </div> 
+</div>
